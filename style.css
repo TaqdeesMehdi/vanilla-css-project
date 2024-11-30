@@ -239,6 +239,9 @@
       border-radius: 0;
     }
   }
+  [aria-controls="primary-nav"] {
+    display: none;
+  }
   .primary-navigation {
     ul {
       display: flex;
@@ -249,6 +252,7 @@
       text-decoration: none;
     }
     @media (width < 760px) {
+      display: none;
       background-color: var(--background-accent-main);
       position: absolute;
       top: 0;
@@ -269,6 +273,15 @@
       }
     }
   }
+  @media (width < 760px) {
+    [aria-controls="primary-nav"] {
+      display: block;
+    }
+    [aria-expanded="true"] + .primary-navigation {
+      display: block;
+    }
+  }
+
   .site-footer {
     text-align: center;
     display: grid;
